@@ -25,6 +25,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleDebug
     - name: Distribute App
+      run: |
         curl \
          -F "token=${{secrets.DEPLOYGATE_TOKEN}}" \
          -F "file=@app/build/outputs/apk/debug/app-debug.apk" \
